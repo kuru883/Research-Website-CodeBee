@@ -1,0 +1,174 @@
+/* Progress Bar Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+.progress-container {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    background: rgba(40, 40, 60, 0.9);
+    border-radius: 15px;
+    padding: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 100;
+}
+
+.progress-bar {
+    height: 25px;
+    background: #2a2a40;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(135deg, #9b59b6 0%, #3498db 100%);
+    border-radius: 8px;
+    width: 0;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease;
+    position: relative;
+    box-shadow: 0 3px 15px rgba(155, 89, 182, 0.3);
+}
+
+.progress-fill::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0.15) 0%, 
+        rgba(255,255,255,0.05) 50%, 
+        rgba(255,255,255,0.15) 100%);
+    opacity: 0.6;
+}
+
+.progress-text {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.progress-icon {
+    width: 18px;
+    height: 18px;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+}
+
+/* Quiz Section Styles */
+.quiz-section {
+    margin: 40px auto;
+    width: 90%;
+    max-width: 800px;
+    background-color: rgba(30, 30, 47, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideIn 1s ease-out;
+}
+.quiz-question:not(.active) {
+    display: none;
+}
+.quiz-question {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(46, 46, 72, 0.9);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.quiz-question:hover {
+    transform: translateY(-5px);
+}
+
+.quiz-options {
+    display: grid;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.quiz-option {
+    padding: 15px 25px;
+    background: rgba(44, 44, 68, 0.9);
+    border: 2px solid #3d3d5c;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quiz-option:hover {
+    background: linear-gradient(to right, #9b59b6, #3498db);
+    border-color: #8e44ad;
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(142, 68, 173, 0.4);
+}
+.java-code {
+    background: #2d2d44;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.java-keyword {
+    color: #569cd6;
+}
+
+.java-string {
+    color: #ce9178;
+}
+/* Animations */
+@keyframes glow {
+    0% { box-shadow: 0 0 10px rgba(155, 89, 182, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(155, 89, 182, 0.5); }
+    100% { box-shadow: 0 0 10px rgba(155, 89, 182, 0.3); }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .progress-container {
+        top: 60px;
+        width: 90%;
+        padding: 6px;
+    }
+    
+    .progress-bar {
+        height: 20px;
+    }
+    
+    .quiz-section {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .quiz-option {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}

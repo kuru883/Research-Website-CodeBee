@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VB.NET</title>
+    <link rel="stylesheet" href="dotnetstyle.css">
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('collapsed');
+        }
+
+        function showCompiler(language) {
+            if (language === 'java') {
+                window.location.href = 'java.html';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <div class="menu-item" title="Home">
+            <i class="icon">🏠</i><span class="text">Home</span>
+        </div>
+        <div class="menu-item" title="Lessons">
+            <i class="icon">📚</i><span class="text">Lessons</span>
+            <div class="submenu">
+                <div class="submenu-item">Lesson 1</div>
+                <div class="submenu-item">Lesson 2</div>
+            </div>
+        </div>
+        <div class="menu-item" title="Quiz">
+            <i class="icon">📝</i><span class="text">Quiz</span>
+        </div>
+        <div class="menu-item" title="Settings">
+            <i class="icon">⚙️</i><span class="text">Settings</span>
+        </div>
+        <div class="menu-item" title="Light Mode">
+            <i class="icon">🌞</i><span class="text">Light Mode</span>
+        </div>
+        <div class="menu-item" title="Logout">
+            <i class="icon">🚪</i><span class="text">Logout</span>
+        </div>
+        <div class="menu-item" title="Java Compiler" onclick="showCompiler('java')">
+            <i class="icon">☕</i><span class="text">Java</span>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Welcome to Code Bee</h1>
+        <p>Select an option from the sidebar.</p>
+    </div>
+
+    <main>
+        <h1>VB.NET Compiler</h1>
+        <div data-pym-src="https://www.jdoodle.com/embed/v1/a5a21b3c29cfdb63"></div>
+        <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/javascript"></script>
+    </main>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("minimized");
+        }
+    </script>
+</body>
+</html>
+
+  

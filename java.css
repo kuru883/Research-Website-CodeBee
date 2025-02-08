@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    background-color: #121212; /* Dark background for consistency */
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #1e1e1e; /* Dark gray for sidebar */
+    color: white;
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+    transition: width 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+.sidebar.minimized {
+    width: 60px;
+}
+
+.sidebar .toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.sidebar .toggle-btn:hover {
+    transform: rotate(90deg); /* Rotate the button when hovered */
+}
+
+.sidebar .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar .menu-item:hover {
+    background-color: #ff7f50; /* Orange hover color */
+    transform: translateX(5px);
+}
+
+.sidebar .icon {
+    font-size: 24px;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.sidebar .text {
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.minimized .text {
+    opacity: 0;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+    flex-grow: 1;
+    transition: all 0.3s ease-in-out;
+    background-color: #1e1e1e; /* Dark background for content */
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.minimized + .content {
+    margin-left: 60px;
+}
+
+.submenu {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    max-height: 0;
+    padding-left: 20px;
+    opacity: 0;
+}
+
+.submenu.show {
+    display: block;
+    max-height: 200px;
+    opacity: 1;
+}
+
+.submenu-item {
+    padding: 12px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submenu-item:hover {
+    background-color: #ddd; /* Light gray hover color */
+    transform: translateX(5px);
+}
+
+.content h1, .content p {
+    font-size: 22px;
+    color: #fff; /* White text for content */
+    margin-bottom: 20px;
+}
+
+.content:hover {
+    background-color: #333; /* Slightly lighter dark background on hover */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}

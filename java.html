@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Online Compiler</title>
+    <link rel="stylesheet" href="java.css">
+    
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <div class="menu-item" onclick="showCompiler('javacompiler')" title="Java Compiler">
+            <i class="icon">☕</i><span class="text">Java Compiler</span>
+        </div>
+        <div class="menu-item" onclick="toggleSubmenu()" title="Lessons">
+            <i class="icon">📚</i><span class="text">Lessons</span>
+            <div class="submenu">
+                <div class="submenu-item">Lesson 1</div>
+                <div class="submenu-item">Lesson 2</div>
+            </div>
+        </div>
+        <div class="menu-item" title="Quiz">
+            <i class="icon">📝</i><span class="text">Quiz</span>
+        </div>
+        <div class="menu-item" title="Settings">
+            <i class="icon">⚙️</i><span class="text">Settings</span>
+        </div>
+        <div class="menu-item" onclick="logout()" title="Logout">
+            <i class="icon">🚪</i><span class="text">Back</span>
+        </div>
+    </div>
+
+    <div class="content" id="content">
+        <!-- Content dynamically changes based on interactions -->
+    </div>
+    <script src="java.js"></script>
+</body>
+</html>
